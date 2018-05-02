@@ -1,0 +1,874 @@
+  <html>
+  <head>
+  <script src="jquery-3.1.1.min.js"></script>
+	  <link rel="stylesheet" href="materialize.css">
+	  <script src="materialize.js"></script>
+	  <script src="https://code.highcharts.com/highcharts.js"></script>
+	  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+	   <link rel="stylesheet" href="animate.css">
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	    <style type="text/css">
+	    ::-webkit-scrollbar {
+		    display: none;
+		}
+		::-moz-scrollbar {
+		    display: none;
+		}
+		.pow{
+		    box-shadow: inset 0 600px 0 0 #37474f;
+		}
+		.pointer{
+			cursor: pointer;
+		}
+		.above{
+			background: #0E1217;
+		}
+		#fbButton{
+			position: absolute;
+			top:57%;
+			left: 50%;
+			-webkit-transform: translate(-50%,0%);
+		}
+	    </style>
+  </head>
+  <body >
+  	<div class="above" id="firstScreen" style="height: 100%;width: 100%">
+  		<img src="fire-loader.gif" height="60%" style="position: absolute;left: 50%;top: 50%;transform: translate(-50%,0);">
+  		<div id="fbButton" onclick="login()">
+        	<a class="waves-effect waves-yellow btn-large"><i class="material-icons left">done</i>Login</a>
+        </div>
+        <div class="load" style="position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
+        </div>
+  	</div>
+  <div id="Insurer" style="display: none;overflow: scroll;">
+		<nav class="nav-extended teal">
+		    <div class="nav-wrapper">
+		      <a href="#" class="brand-logo center">EvnChain</a>
+		      <ul id="nav-mobile" class="right">
+
+		      </ul>
+		      <ul class="left">
+		      	<li><a href="#" data-activates="slide-out" class="butt"><i class="material-icons">menu</i></a></li>
+		      </ul>
+
+		      <ul class="tabs tabs-transparent">
+		        <li class="tab"><a class="active" href="#test1">Summary</a></li>
+		        <li class="tab"><a href="#test2">sendData</a></li>
+		        <li class="tab"><a href="#test3"></a></li>
+		        <li class="tab"><a href="#test4"></a></li>
+		      </ul>
+		    </div>
+		  </nav>
+		  <div id="test1" class="col s12">
+		  	<div class="row blue-grey darken-3">
+			  	<div class="col l4 s12 m6 hoverable">
+			  		 <div class="card">
+					    <div class="card-image waves-effect waves-block waves-light" id="conta">
+
+					    </div>
+					    <div class="card-content blue-grey darken-3">
+					      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+					      <p><a href="#">This is a link</a></p>
+					    </div>
+					    <div class="card-reveal">
+					      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+					      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+					    </div>
+					  </div>
+				</div>
+				<div class="col l4 s12 m6 hoverable">
+			  		 <div class="card">
+					    <div class="card-image waves-effect waves-block waves-light" id="conta1">
+
+					    </div>
+					    <div class="card-content">
+					      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+					      <p><a href="#">This is a link</a></p>
+					    </div>
+					    <div class="card-reveal">
+					      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+					      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+					    </div>
+					  </div>
+				</div>
+				<div class="col l4 s12 m6 hoverable">
+			  		 <div class="card">
+					    <div class="card-image waves-effect waves-block waves-light" id="conta2">
+
+					    </div>
+					    <div class="card-content">
+					      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+					      <p><a href="#">This is a link</a></p>
+					    </div>
+					    <div class="card-reveal">
+					      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+					      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+					    </div>
+					  </div>
+				</div>
+				<div class="col l12 s12 m12 hoverable">
+			  		<div class="card" id="conta3">
+
+        			</div>
+				</div>
+				<div class="col s12">&nbsp</div>
+				<div class="col s12">&nbsp</div>
+		  	</div>
+		  </div>
+		  <div id="test2" class="col s12" style="min-height: 100%;transition: all ease 1.8s;background: #546e7a">
+		  	<div id="userContent" style="min-height: 100%;width: 100%;display: none;">
+		  		<div class="row">
+		  			<div class="col s12 l3">
+		  				<div class="card small">
+					        <div class="card-image">
+					          <img src="bg.jpg">
+					          <span class="card-title nameOfUser">Card Title</span>
+					          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+					        </div>
+					        <div class="card-content">
+					          <p class="details">Bought In Year 2017.</p>
+					        </div>
+					    </div>
+					       <ul class="collapsible" data-collapsible="accordion">
+						    <li>
+						      <div class="collapsible-header"><i class="material-icons">filter_drama</i>Personal Data</div>
+						      <div class="collapsible-body white center"><span class="pdata">Lorem ipsum dolor sit amet.</span></div>
+						    </li>
+						    <li>
+						      <div class="collapsible-header"><i class="material-icons">place</i>Analysed Tags</div>
+						      <div class="collapsible-body center white"><span class="tagss">Lorem ipsum dolor sit amet.</span></div>
+						    </li>
+						    <li>
+						      <div class="collapsible-header"><i class="material-icons">whatshot</i>Other</div>
+						      <div class="collapsible-body center white"><span>Lorem ipsum dolor sit amet.</span></div>
+						    </li>
+						  </ul>
+		  			</div>
+		  			<div class="col s12 l9" >
+		  				<div class="card"  style="height: 30%" id="map">
+
+					    </div>
+		  			</div>
+		  			<div class="col s12 l5" >
+		  				<div class="card" id="conta4">
+
+					    </div>
+		  			</div>
+		  			<div class="col s12 l4" >
+		  				<div class="card">
+						    <div class="card-content">
+						      <p id="test8">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+						      <p id="test5">I am a very simple . I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+						      <p id="test6">I am a very  card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+						    </div>
+						    <div class="card-tabs">
+						      <ul class="tabs tabs-fixed-width">
+						        <li class="tab"><a href="#test8">Twitter</a></li>
+						        <li class="tab"><a class="active" href="#test5">Band</a></li>
+						        <li class="tab"><a href="#test6">Cr/De Cards</a></li>
+						      </ul>
+						    </div>
+						    <div class="card-content grey lighten-4">
+						      <div>Variable Dashboard</div>
+
+						    </div>
+						  </div>
+		  			</div>
+		  		</div>
+		  	</div>
+		  	<div class="row container lala" style="display: block">
+		  		<div class="col s12 m6 l4 animated fadeInUp lifeClass">
+		          <div class="card"  style="background-color: #0E1717">
+		            <div class="card-content white-text">
+		                <ul class="collection" style="background-color: #0E1717;border:1px solid transparent">
+						    <li class="collection-item avatar"  style="background-color: #0E1717;border:1px solid transparent">
+						     <i class="material-icons circle green">flash_on</i>
+						      <span class="title" >THIS HOURS USAGE</span>
+						      <p id="usageToday">First Line <br>
+						         Second Line
+						      </p>
+						    </li>
+						   </ul>
+						   <div class="card-action">
+				             <a class="waves-effect waves-light btn" onclick="showUserData()"><i class="material-icons right">cloud</i>button</a>
+				            </div>
+		            </div>
+		          </div>
+		        </div>
+		        <div class="col s12 m6 l4 animated fadeInUp lifeClass" style="animation-delay: 0.5s;">
+		          <div class="card"  style="background-color: #0E1717">
+		            <div class="card-content white-text">
+		                <ul class="collection" style="background-color: #0E1717;border:1px solid transparent">
+						    <li class="collection-item avatar"  style="background-color: #0E1717;border:1px solid transparent">
+						      <i class="material-icons circle red">multiline_chart</i>
+						      <span class="title" >Dummy Data</span>
+						      <p id="recordHigh">Dummy Insurance <br>
+						         Second Line
+						      </p>
+						    </li>
+						   </ul>
+						   <div class="card-action">
+				             <a class="waves-effect waves-light btn" onclick="showUserData()"><i class="material-icons right">cloud</i>button</a>
+				            </div>
+		            </div>
+		          </div>
+		        </div>
+		        <div class="col s12 m6 l4 animated fadeInUp lifeClass" style="animation-delay: 1s;">
+		          <div class="card"  style="background-color: #0E1717">
+		            <div class="card-content white-text">
+		                <ul class="collection" style="background-color: #0E1717;border:1px solid transparent">
+						    <li class="collection-item avatar"  style="background-color: #0E1717;border:1px solid transparent">
+						      <i class="material-icons circle indigo">perm_contact_calendar</i>
+						      <span class="title" >LAST YEAR</span>
+						      <p id="thisTime">First Line <br>
+						         Second Line
+						      </p>
+						    </li>
+						   </ul>
+						   <div class="card-action">
+				             <a class="waves-effect waves-light btn" onclick="showUserData()"><i class="material-icons right">cloud</i>button</a>
+				            </div>
+		            </div>
+		          </div>
+		        </div>
+		  	</div>
+		  </div>
+		  <div id="test3" class="col s12">Test 3</div>
+		  <div id="test4" class="col s12"></div>
+
+
+		<ul id="slide-out" class="left side-nav">
+			<li><div class="userView">
+				  <div class="background">
+				    <img src="assests/other/bg1.jpg">
+				  </div>
+				  <a href="#!user"><img class="circle" id="sideBarUsrPic" src="assests/other/download.jpg"></a>
+				  <a href="#!name"><span class="white-text name" id="nameUsr">John Doe</span></a>
+				  <a href="#!email"><span class="white-text email" id="emailUsr">jdandturk@gmail.com</span></a>
+				</div>
+			</li>
+			<li><a href="#!"><i class="material-icons" onmouseover="chartsCal(1)">attach_money</i>Current Policies</a></li>
+			<li><div class="divider"></div></li>
+			<li><a href="#!"><i class="material-icons" onmouseover="chartsCal(2)">bubble_chart</i>Statistics</a></li>
+			<li><div class="divider"></div></li>
+			<li><a href="#!"><i class="material-icons">cloud</i>File Claims</a></li>
+			<li><div class="divider"></div></li>
+			<li><a href="#!"><i class="material-icons">alarm</i>Connect Fitbit</a></li>
+			<li><div class="divider"></div></li>
+			<li><a href="#!"><i class="material-icons">help</i>Help</a></li>
+			<li><div class="divider"></div></li>
+			<li><a href="#!"><i class="material-icons">local_pizza</i>About Us</a></li>
+
+		</ul>
+	</div>
+
+<script type="text/javascript">
+
+  $('#bt').click(function() {
+       $('#ex').click();
+  });
+</script>
+<script type="text/javascript">
+
+function showUserData(){
+	$(".lifeClass").removeClass('fadeInUp');
+	$(".lifeClass").addClass('fadeOutDown');
+	setTimeout(function(){
+		$("#test2").addClass('pow');
+		$("#userContent").css("display","block");
+
+	},1500)
+
+}
+
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+	$('.butt').sideNav({
+      menuWidth: 300, // Default is 240
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: false // Choose whether you can drag to open on touch screens
+    }
+  );
+
+	function login(){
+		$("#fbButton").remove();
+		$(".load").html('<div class="preloader-wrapper big active center-align"> <div class="spinner-layer spinner-blue"> <div class="circle-clipper left"> <div class="circle"></div> </div><div class="gap-patch"> <div class="circle"></div> </div><div class="circle-clipper right"> <div class="circle"></div> </div> </div> <div class="spinner-layer spinner-red"> <div class="circle-clipper left"> <div class="circle"></div> </div><div class="gap-patch"> <div class="circle"></div> </div><div class="circle-clipper right"> <div class="circle"></div> </div> </div> <div class="spinner-layer spinner-yellow"> <div class="circle-clipper left"> <div class="circle"></div> </div><div class="gap-patch"> <div class="circle"></div> </div><div class="circle-clipper right"> <div class="circle"></div> </div> </div> <div class="spinner-layer spinner-green"> <div class="circle-clipper left"> <div class="circle"></div> </div><div class="gap-patch"> <div class="circle"></div> </div><div class="circle-clipper right"> <div class="circle"></div> </div> </div> </div>');
+		Materialize.toast('Login Successful', 3000, 'rounded');
+		setTimeout(()=>{
+			Materialize.toast('Taking to something Beautiful!', 3000, 'rounded');
+		},1000)
+		setTimeout(()=>{
+			$("#firstScreen").addClass("animated slideOutLeft");
+			$("#Insurer").css("display","block")
+			setTimeout(()=>{
+				$("#firstScreen").remove();
+				Materialize.toast('Welcome to the console!', 3000, 'rounded');
+				abcde();
+			},1000)
+		},4500)
+
+	}
+</script>
+ <script>
+     	$(function () {
+
+});
+     </script>
+       <script>
+function abcde() {
+
+        // Build the chart
+        Highcharts.chart('conta', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie',
+                backgroundColor :'#546e7a',
+                color:'white',
+                width: null,
+        		height: 230
+            },
+            title: {
+            	style:{
+            		color:'white'
+            	},
+                text: 'Premium Information'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                name: 'Brands',
+                colorByPoint: true,
+                data: [{
+                    name: 'Premium amount paid!',
+                    y: 56.33,
+                }, {
+                    name: 'To be paid!',
+                    y: 24.03,
+                    sliced: true,
+                    selected: true
+                }]
+            }]
+        });
+
+
+
+          Highcharts.chart('conta1', {
+    	chart: {
+                backgroundColor :'#546e7a',
+                color:'white',
+                width: null,
+        		height: 230
+            },
+        title: {
+        	style:{
+            		color:'white'
+            	},
+            text: 'Your Risk Factor',
+            x: -20 //center
+        },
+        subtitle: {
+        	style:{
+            		color:'white'
+            	},
+            text: 'Social Analysis',
+            x: -20
+        },
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+        yAxis: {
+            title: {
+                text: 'Percentage'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: '°C'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'User',
+            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+        }]
+    });
+
+          Highcharts.chart('conta2', {
+        chart: {
+            type: 'column',
+            backgroundColor :'#546e7a',
+            color:'white',
+            width: null,
+    		height: 230
+        },
+        title: {
+            text: 'Browser market shares. January, 2015 to May, 2015'
+        },
+        subtitle: {
+            text: 'Click the columns to view versions. Source: <a href="http://netmarketshare.com">netmarketshare.com</a>.'
+        },
+        xAxis: {
+            type: 'category'
+        },
+        yAxis: {
+            title: {
+                text: 'Total percent market share'
+            }
+
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            series: {
+                borderWidth: 0,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y:.1f}%'
+                }
+            }
+        },
+
+        tooltip: {
+            headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+        },
+
+        series: [{
+            name: 'Brands',
+            colorByPoint: true,
+            data: [{
+                name: 'Microsoft Internet Explorer',
+                y: 56.33,
+                drilldown: 'Microsoft Internet Explorer'
+            }, {
+                name: 'Chrome',
+                y: 24.03,
+                drilldown: 'Chrome'
+            }, {
+                name: 'Firefox',
+                y: 10.38,
+                drilldown: 'Firefox'
+            }, {
+                name: 'Safari',
+                y: 4.77,
+                drilldown: 'Safari'
+            }, {
+                name: 'Opera',
+                y: 0.91,
+                drilldown: 'Opera'
+            }, {
+                name: 'Proprietary or Undetectable',
+                y: 0.2,
+                drilldown: null
+            }]
+        }],
+        drilldown: {
+            series: [{
+                name: 'Microsoft Internet Explorer',
+                id: 'Microsoft Internet Explorer',
+                data: [
+                    [
+                        'v11.0',
+                        24.13
+                    ],
+                    [
+                        'v8.0',
+                        17.2
+                    ],
+                    [
+                        'v9.0',
+                        8.11
+                    ],
+                    [
+                        'v10.0',
+                        5.33
+                    ],
+                    [
+                        'v6.0',
+                        1.06
+                    ],
+                    [
+                        'v7.0',
+                        0.5
+                    ]
+                ]
+            }, {
+                name: 'Chrome',
+                id: 'Chrome',
+                data: [
+                    [
+                        'v40.0',
+                        5
+                    ],
+                    [
+                        'v41.0',
+                        4.32
+                    ],
+                    [
+                        'v42.0',
+                        3.68
+                    ],
+                    [
+                        'v39.0',
+                        2.96
+                    ],
+                    [
+                        'v36.0',
+                        2.53
+                    ],
+                    [
+                        'v43.0',
+                        1.45
+                    ],
+                    [
+                        'v31.0',
+                        1.24
+                    ],
+                    [
+                        'v35.0',
+                        0.85
+                    ],
+                    [
+                        'v38.0',
+                        0.6
+                    ],
+                    [
+                        'v32.0',
+                        0.55
+                    ],
+                    [
+                        'v37.0',
+                        0.38
+                    ],
+                    [
+                        'v33.0',
+                        0.19
+                    ],
+                    [
+                        'v34.0',
+                        0.14
+                    ],
+                    [
+                        'v30.0',
+                        0.14
+                    ]
+                ]
+            }, {
+                name: 'Firefox',
+                id: 'Firefox',
+                data: [
+                    [
+                        'v35',
+                        2.76
+                    ],
+                    [
+                        'v36',
+                        2.32
+                    ],
+                    [
+                        'v37',
+                        2.31
+                    ],
+                    [
+                        'v34',
+                        1.27
+                    ],
+                    [
+                        'v38',
+                        1.02
+                    ],
+                    [
+                        'v31',
+                        0.33
+                    ],
+                    [
+                        'v33',
+                        0.22
+                    ],
+                    [
+                        'v32',
+                        0.15
+                    ]
+                ]
+            }, {
+                name: 'Safari',
+                id: 'Safari',
+                data: [
+                    [
+                        'v8.0',
+                        2.56
+                    ],
+                    [
+                        'v7.1',
+                        0.77
+                    ],
+                    [
+                        'v5.1',
+                        0.42
+                    ],
+                    [
+                        'v5.0',
+                        0.3
+                    ],
+                    [
+                        'v6.1',
+                        0.29
+                    ],
+                    [
+                        'v7.0',
+                        0.26
+                    ],
+                    [
+                        'v6.2',
+                        0.17
+                    ]
+                ]
+            }, {
+                name: 'Opera',
+                id: 'Opera',
+                data: [
+                    [
+                        'v12.x',
+                        0.34
+                    ],
+                    [
+                        'v28',
+                        0.24
+                    ],
+                    [
+                        'v27',
+                        0.17
+                    ],
+                    [
+                        'v29',
+                        0.16
+                    ]
+                ]
+            }]
+        }
+    });
+
+  Highcharts.chart('conta3', {
+        chart: {
+            type: 'area',
+            backgroundColor :'#546e7a',
+            color:'white',
+            width: null,
+    		height: 230
+        },
+        title: {
+            text: 'Historic and Estimated Worldwide Population Growth by Region'
+        },
+        subtitle: {
+            text: 'Source: Wikipedia.org'
+        },
+        xAxis: {
+            categories: ['1750', '1800', '1850', '1900', '1950', '1999', '2050'],
+            tickmarkPlacement: 'on',
+            title: {
+                enabled: false
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Billions'
+            },
+            labels: {
+                formatter: function () {
+                    return this.value / 1000;
+                }
+            }
+        },
+        tooltip: {
+            split: true,
+            valueSuffix: ' millions'
+        },
+        plotOptions: {
+            area: {
+                stacking: 'normal',
+                lineColor: '#666666',
+                lineWidth: 1,
+                marker: {
+                    lineWidth: 1,
+                    lineColor: '#666666'
+                }
+            }
+        },
+        series: [{
+            name: 'Asia',
+            data: [502, 635, 809, 947, 1402, 3634, 5268]
+        }, {
+            name: 'Africa',
+            data: [106, 107, 111, 133, 221, 767, 1766]
+        }, {
+            name: 'Europe',
+            data: [163, 203, 276, 408, 547, 729, 628]
+        }, {
+            name: 'America',
+            data: [18, 31, 54, 156, 339, 818, 1201]
+        }, {
+            name: 'Oceania',
+            data: [2, 2, 2, 6, 13, 30, 46]
+        }]
+    });
+
+
+
+    };
+
+     </script>
+
+     <script>
+function myMap() {
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {
+    center: new google.maps.LatLng(51.5, -0.2),
+    zoom: 5
+  }
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+<script>
+	function sendData(){
+console.log("ko")
+     		var settings = {
+			  "async": true,
+			  "crossDomain": true,
+			  "url": "http://10.71.2.210:8082/web",
+			  "method": "GET",
+			  "headers": {
+			    "cache-control": "no-cache",
+			    "postman-token": "cd89f25c-812d-8419-5aa4-18b5185ca49f"
+			  },
+			  "data": {
+			    "email": "swastikshrivastava0@gmail.com"
+			  }
+			}
+
+			$.ajax(settings).done(function (response) {
+			  console.log(response);
+			  $(".lala").html('<div class="col s12 m6 l4 animated fadeInUp lifeClass"> <div class="card" style="background-color: #0E1717"> <div class="card-content white-text"> <ul class="collection" style="background-color: #0E1717;border:1px solid transparent"> <li class="collection-item avatar" style="background-color: #0E1717;border:1px solid transparent"> <i class="material-icons circle green">flash_on</i> <span class="title" >'+response[0].name+'</span> <p id="usageToday">HDFC LIFE EASY HEALTH<br> Rs. '+ response[0].premium+' For 5years </p> </li> </ul> <div class="card-action"> <a class="waves-effect waves-light btn" onclick="showUserData()"><i class="material-icons right">cloud</i>More</a> </div> </div> </div> </div><div class="col s12 m6 l4 animated fadeInUp lifeClass" style="animation-delay: 0.5s;"> <div class="card" style="background-color: #0E1717"> <div class="card-content white-text"> <ul class="collection" style="background-color: #0E1717;border:1px solid transparent"> <li class="collection-item avatar" style="background-color: #0E1717;border:1px solid transparent"> <i class="material-icons circle red">multiline_chart</i> <span class="title" >Dummy Data</span> <p id="recordHigh">Dummy Insurance <br> Second Line </p> </li> </ul> <div class="card-action"> <a class="waves-effect waves-light btn" onclick="showUserData()"><i class="material-icons right">cloud</i>button</a> </div> </div> </div> </div> <div class="col s12 m6 l4 animated fadeInUp lifeClass" style="animation-delay: 1s;"> <div class="card" style="background-color: #0E1717"> <div class="card-content white-text"> <ul class="collection" style="background-color: #0E1717;border:1px solid transparent"> <li class="collection-item avatar" style="background-color: #0E1717;border:1px solid transparent"> <i class="material-icons circle indigo">perm_contact_calendar</i> <span class="title" >LAST YEAR</span> <p id="thisTime">First Line <br> Second Line </p> </li> </ul> <div class="card-action"> <a class="waves-effect waves-light btn" onclick="showUserData()"><i class="material-icons right">cloud</i>button</a> </div> </div> </div> </div>');
+			  $(".nameOfUser").html(response[0].name);
+
+			  $(".details").html('Brought in year 2017.<br>Age :'+ response[0].age+'<br>Gender :'+response[0].gender);
+			  $(".pdata").html("<br>BMI :"+response[0].BMI+"<br>Child :"+response[0].child+"<br>Smoke :"+response[0].smoke);
+			  $(".tagss").html("<br>Tags :"+response[0].tag_1+"  , "+response[0].tag_2);
+
+			  $("#test8").html("Twitter Handle: " +response[0].twitter+"<br>Total Analysed Tweets: "+response[0].tweets+"<br>Tweets Found Risky : "+response[0].risky_tweets+"<br>Analysed Tagged Tweets: "+response[0].tagged_tweets)
+			  $("#test5").html("Activities Past 27 days. <br>Sleep Days :" +response[0].sleep+"<br>Workout Days : "+response[0].workout+"<br>Walk Days : "+response[0].walk+"<br>Bike Days : "+response[0].bike)
+			  $("#test6").html("Card Transaction Frequency.<br>At Shopping :" +response[0].shopping+"<br>At Recharge : "+response[0].recharge+"<br>At Bills : "+response[0].bills+"<br>At Movies : "+response[0].movie);
+
+var arrp=[];
+response[0].risk_factor.forEach((i)=>{
+	arrp.push(parseInt(i));
+});
+
+
+			  Highcharts.chart('conta4', {
+        chart: {
+            type: 'area',
+            backgroundColor :'#546e7a',
+            color:'white',
+            height:300,
+            width:null
+        },
+        title: {
+            text: 'Risk Factor'
+        },
+        subtitle: {
+            text: 'Source:'
+        },
+        xAxis: {
+            categories: ['1', '2', '3', '4', '5', '6', '7','8','9','10','11','12','13','14','15','16','17','18','19','20'],
+            tickmarkPlacement: 'on',
+            title: {
+                enabled: false
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Billions'
+            },
+            labels: {
+                formatter: function () {
+                    return this.value / 1000;
+                }
+            }
+        },
+        tooltip: {
+            split: true,
+            valueSuffix: ' % Risky'
+        },
+        plotOptions: {
+            area: {
+                stacking: 'normal',
+                lineColor: '#666666',
+                lineWidth: 1,
+                marker: {
+                    lineWidth: 1,
+                    lineColor: '#666666'
+                }
+            }
+        },
+        series: [{
+            name: 'Risk',
+            data: arrp
+        }]
+    });
+});
+
+};
+
+    function getRisk(){
+        		var settings = {
+			  "async": true,
+			  "crossDomain": true,
+			  "url": "http://10.71.2.210:8082/risk",
+			  "method": "POST",
+			  "headers": {
+			    "content-type": "application/x-www-form-urlencoded",
+			    "cache-control": "no-cache",
+			    "postman-token": "e38c6ac1-fb8d-92b0-c1ef-0e2210185018"
+			  },
+			  "data": {	"email":"swastikshrivastava0@gmail.com"
+						}
+			}
+
+			$.ajax(settings).done(function (response) {
+			  console.log(response);
+			});
+        }
+setInterval(getRisk,30000)
+
+     setInterval(sendData,8000)
+</script>
+</body>
+  </html>

@@ -1,0 +1,162 @@
+
+::-webkit-scrollbar {
+        display: none;
+    }
+
+::-moz-scrollbar {
+        display: none;
+    }
+
+@font-face{
+	font-family: Roboto-Thin;
+    src: url(../files/Roboto-Thin.ttf);
+}
+
+@font-face{
+	font-family: Roboto-Regular;
+    src: url(../files/Regular.ttf);
+}
+
+@font-face{
+	font-family: Roboto-Light;
+    src: url(../files/Roboto-Light.ttf);
+}
+
+@font-face{
+	font-family: Roboto-Medium;
+    src: url(../files/Roboto-Medium.ttf);
+}
+
+@font-face{
+	font-family: Roboto-Black;
+    src: url(../files/Roboto-Black.ttf);
+}
+
+@font-face{
+	font-family: troy;
+    src: url(../files/troy.ttf);
+}
+
+@font-face{
+	font-family: aarambh;
+    src: url(../files/aarambh.TTF);
+}
+
+body{
+	background-color: #FFD800;
+	overflow-x: hidden;
+}
+
+h1{
+	font-size: 550%;
+}
+
+.cloud{
+	position: absolute;
+}
+
+#cloud1{
+	top: 23%;
+	left: -2%;
+	height: 30vh;
+}
+
+#cloud4{
+	top: 23%;
+	left: -2%;
+	height: 12vh;
+}
+
+#cloud2{
+	top: 20%;
+	left: 35%;
+	height: 20vh;
+}
+#cloud3{
+	top: 35%;
+	right:0;
+	height: 15vh;
+}
+
+#cloud5{
+	top: 74%;
+	left: 46%;
+	height: 12vh;
+}
+#cloud6{
+	top: 7%;
+	left: 50%;
+	height: 14vh;
+}
+
+.sam_text{
+	font-family: Roboto-Black;
+}
+
+.small-font{
+	font-size: 2vh;
+}
+
+
+.troy_holder{
+	font-family: troy;
+}
+
+.aarambh{
+	font-family: aarambh;
+}
+
+.regular-roboto{
+	font-family: Roboto-Regular;
+}
+
+
+.horizontal_line {
+   width: 40%;
+	 left: 60%;
+	 transform: translate(75%,0%);
+   text-align: center;
+   border-bottom: 1px solid #bbb;
+   line-height: 0.1em;
+   margin: 10px 0 20px;
+}
+
+.span_in {
+    background:#fff;
+    padding:0 10px;
+}
+
+.modal{
+	width: 35% !important;
+	overflow: hidden;
+}
+@media  (max-width: 600px) {
+	.modal{
+		width: 90% !important;
+	}
+
+	.horizontal_line {
+	   width: 100%;
+		 transform: translate(0%,0%);
+	   text-align: center;
+	   border-bottom: 1px solid #bbb;
+	   line-height: 0.1em;
+	   margin: 10px 0 20px;
+	}
+
+}
+
+@media(max-width:920px){
+  .terms_Condi{
+    display:none;
+  }
+}
+
+.headings{
+	font-family: Roboto-Light;
+	color: white;
+}
+
+.content-text{
+	font-family: Roboto-Light;
+}
